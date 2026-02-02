@@ -1,0 +1,20 @@
+Estrutura Inicial do app Bank
+```
+├── 📁 backend
+│   ├── 📁 config
+│   ├── 📁 docs
+│   │   └── 📄 instaladores.txt
+│   └── 📁 src
+│       └── 📄 server.js
+├── 📁 docs
+│   ├── 📁 assets
+│   │   ├── 📁 css
+│   │   │   └── 🎨 style.css
+│   │   ├── 📁 img
+│   │   └── 📁 js
+│   │       └── 📄 script.js
+│   ├── 📁 pages
+│   │   └── 🌐 cadastro.html
+│   └── 🌐 index.html
+├── ⚙️ .gitignore
+└── 📝 README.md
