@@ -1,9 +1,5 @@
-# Node.js
-backend/node_modules/
-backend/package-lock.json
-
-# Variáveis de ambiente
-backend/.env
-
-
-.vscode
+node_modules/
+backend/src/node_modules/
+.env
+*.log
+.DS_Store

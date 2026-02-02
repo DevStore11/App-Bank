@@ -1,2 +1,0 @@
-npm install express mysql2 body-parser cors dotenv
-node src/server.js
