@@ -45,21 +45,21 @@ A prioridade no backend é construir a camada de API que irá interagir com o ba
 ### Fase 2: Funcionalidades Principais da Conta
 
 1.  **Endpoints de Contas (`/api/accounts/...`):**
-    *   [ ] `GET /:userId/accounts`: Listar as contas de um usuário.
-    *   [ ] `GET /:accountId/balance`: Consultar o saldo de uma conta específica.
-    *   [ ] `GET /:accountId/statement`: Obter o extrato (histórico de `transacoes`).
+    *   [x] `GET /:userId/accounts`: Listar as contas de um usuário.
+    *   [x] `GET /:accountId/balance`: Consultar o saldo de uma conta específica.
+    *   [x] `GET /:accountId/statement`: Obter o extrato (histórico de `transacoes`).
 
 2.  **Endpoints de Transações (`/api/transactions/...`):**
-    *   [ ] **Depósito (`POST /deposit`):**
+    *   [x] **Depósito (`POST /deposit`):**
         *   Criar um registo na tabela `depositos`.
         *   Atualizar o saldo na tabela `contas`.
         *   Criar um registo na tabela `transacoes`.
-    *   [ ] **Saque (`POST /withdraw`):**
+    *   [x] **Saque (`POST /withdraw`):**
         *   Verificar se há saldo suficiente.
         *   Criar um registo na tabela `saques`.
         *   Atualizar o saldo na tabela `contas`.
         *   Criar um registo na tabela `transacoes`.
-    *   [ ] **Transferência (`POST /transfer`):**
+    *   [x] **Transferência (`POST /transfer`):**
         *   Verificar saldo da conta de origem.
         *   Atualizar saldos das contas de origem e destino.
         *   Criar registos nas tabelas `transfer` e `transacoes` para ambas as contas.
@@ -67,9 +67,9 @@ A prioridade no backend é construir a camada de API que irá interagir com o ba
 ### Fase 3: Segurança e Auditoria
 
 1.  **Auditoria (`audi_logs`):**
-    *   [ ] Criar um serviço de logging que insere registos na tabela `audi_logs` para operações críticas (login, transferências, alterações de dados).
+    *   [x] Criar um serviço de logging que insere registos na tabela `audi_logs` para operações críticas (login, transferências, alterações de dados).
 2.  **Validação de Dados:**
-    *   [ ] Adicionar validação robusta em todos os endpoints para prevenir injeção de SQL e dados malformados (sugestão: usar bibliotecas como `Joi` ou `express-validator`).
+    *   [x] Adicionar validação robusta em todos os endpoints para prevenir injeção de SQL e dados malformados (sugestão: usar bibliotecas como `Joi` ou `express-validator`).
 
 ### Fase 4: Notificações e Suporte
 1.  **Infraestrutura de Real-time:**
