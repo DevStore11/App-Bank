@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimePay - Seu Banco Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mozilla+Text:wght@200..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="gradient-bg">
+
+    <!-- Barra lateraal de navegacao -->
+
+    <aside class="fixed left-0 top-0 h-screen w-64 bg-slate-900/80 backdrop-blur-xl border-r border-slate-800 z-50">
+        <div class="p-6">   
+            <h1 class="font-display text-3xl font-bold text-amber-500 mb-2">PrimePay</h1>
+            <p class="text-slate-400 text-sm">Seu futuro financeiro</p>
+        </div>
+
+        <nav class="px-4 space-y-2">
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg bg-amber-500/10 text-amber-500 border border-amber-500/20 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="font-medium">Dashboard</span>
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                </svg>
+                <span class="font-medium">Transações</span>
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+                <span class="font-medium">Cartões</span>
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span class="font-medium">Investimentos</span>
+            </a>
+
+            <a href="#"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="font-medium">Configurações</span>
+            </a>
+        </nav>
+
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-medium text-sm">João Silva</p>
+                        <p class="text-xs text-slate-400">joao@email.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Conteudo principal -->
+    <main class="ml-64 p-8">
+
+        <!-- Header -->
+        <header class="mb-8 fade-in fade-in-1">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="font-display text-4xl font-bold mb-2">Bem-vindo de volta, João</h2>
+                    <p class="text-slate-400">Aqui está um resumo das suas finanças hoje</p>
+                </div>
+                <button class="btn-primary">
+                    <span>Nova Transferência</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- saldo Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Main saldo Card -->
+            <div class="balance-gradient rounded-2xl p-6 text-slate-900 shadow-2xl hover-lift fade-in fade-in-2">
+                <div class="relative z-10">
+                    <p class="text-sm font-medium opacity-90 mb-1">Saldo Total</p>
+                    <h3 class="font-display text-4xl font-bold mb-4"> 45.280,50Mzn</h3>
+                    <div class="flex items-center gap-2 text-sm">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="font-medium">+12.5% este mês</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="card-glow rounded-2xl p-6 hover-lift fade-in fade-in-3 noise-overlay">
+                <p class="text-slate-400 text-sm mb-1">Receitas</p>
+                <h3 class="text-3xl font-bold mb-2 text-emerald-500">8.450,00 Mzn</h3>
+                <div class="flex items-center gap-2 text-sm text-emerald-500">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span>+18% vs mês anterior</span>
+                </div>
+            </div>
+
+            <!-- despesas Card -->
+            <div class="card-glow rounded-2xl p-6 hover-lift fade-in fade-in-4 noise-overlay">
+                <p class="text-slate-400 text-sm mb-1">Despesas</p>
+                <h3 class="text-3xl font-bold mb-2 text-rose-500">3.120,00 Mzn</h3>
+                <div class="flex items-center gap-2 text-sm text-rose-500">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span>-5% vs mês anterior</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!--  Transicoes recentes -->
+            <div class="lg:col-span-2 card-glow rounded-2xl p-6 fade-in fade-in-5 noise-overlay">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-display text-2xl font-bold">Transações Recentes</h3>
+                    <button class="text-amber-500 hover:text-amber-400 text-sm font-medium transition-all">
+                        Ver todas →
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Transicao Item -->
+                    <div
+                        class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium group-hover:text-amber-500 transition-colors">Supermercado Central</p>
+                            <p class="text-sm text-slate-400">Hoje, 14:30</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-rose-500">-3.120,00 Mzn</p>
+                            <p class="text-xs text-slate-400">Alimentação</p>
+                        </div>
+                    </div>
+
+                    <!-- Transacao Item -->
+                    <div
+                        class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium group-hover:text-amber-500 transition-colors">Salário Empresa XYZ</p>
+                            <p class="text-sm text-slate-400">01 Fev, 08:00</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-emerald-500">+7.500,00 Mzn</p>
+                            <p class="text-xs text-slate-400">Salário</p>
+                        </div>
+                    </div>
+
+                    <!-- Transacao Item -->
+                    <div
+                        class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium group-hover:text-amber-500 transition-colors">Netflix Assinatura</p>
+                            <p class="text-sm text-slate-400">30 Jan, 18:45</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-rose-500">-3.120,00 Mzn</p>
+                            <p class="text-xs text-slate-400">Entretenimento</p>
+                        </div>
+                    </div>
+
+                    <!-- Transacao Item -->
+                    <div
+                        class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium group-hover:text-amber-500 transition-colors">Amazon.com</p>
+                            <p class="text-sm text-slate-400">28 Jan, 21:15</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-rose-500">-189,90 Mzn</p>
+                            <p class="text-xs text-slate-400">Compras</p>
+                        </div>
+                    </div>
+
+                    <!-- Transacao Item -->
+                    <div
+                        class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-all cursor-pointer group">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium group-hover:text-amber-500 transition-colors">Transferência Maria S.
+                            </p>
+                            <p class="text-sm text-slate-400">27 Jan, 16:20</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-rose-500">-500,00 Mzn</p>
+                            <p class="text-xs text-slate-400">Transferência</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- accoes rapidad & Cards -->
+            <div class="space-y-6">
+                <!-- accoes rapidas -->
+                <div class="card-glow rounded-2xl p-6 fade-in fade-in-5 noise-overlay">
+                    <h3 class="font-display text-xl font-bold mb-4">Ações Rápidas</h3>
+                    <div class="space-y-3">
+                        <button
+                            class="w-full flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 text-left transition-all group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Transferir</span>
+                        </button>
+
+                        <button
+                            class="w-full flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 text-left transition-all group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Pagar Conta</span>
+                        </button>
+
+                        <button
+                            class="w-full flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 text-left transition-all group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Depositar</span>
+                        </button>
+
+                        <button
+                            class="w-full flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 hover:bg-slate-800 text-left transition-all group">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-500 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium">Investir</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Virtual Card -->
+                <div
+                    class="relative rounded-2xl p-6 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 overflow-hidden shadow-2xl hover-lift fade-in fade-in-5">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <p class="text-slate-400 text-xs mb-1">Cartão Virtual</p>
+                                <p class="text-2xl font-bold">•••• 4532</p>
+                            </div>
+                            <svg class="w-10 h-10 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                                <circle cx="8" cy="12" r="2" />
+                                <circle cx="16" cy="12" r="2" />
+                            </svg>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-xs text-slate-400 mb-1">Titular</p>
+                                <p class="font-medium">João Silva</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-slate-400 mb-1">Validade</p>
+                                <p class="font-medium">12/28</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- gastos Goal -->
+                <div class="card-glow rounded-2xl p-6 fade-in fade-in-5 noise-overlay">
+                    <h3 class="font-display text-xl font-bold mb-4">Meta de Gastos</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Este mês</span>
+                            <span class="font-medium"> 3.120,00 Mzn / 5.000,00 Mzn</span>
+                        </div>
+                        <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-amber-500 to-orange-600 rounded-full"
+                                style="width: 62.4%"></div>
+                        </div>
+                        <p class="text-xs text-slate-400">Você está 37% abaixo da meta! Ótimo trabalho!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
