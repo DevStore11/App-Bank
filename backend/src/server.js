@@ -1,20 +1,38 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const servidor = express();
-const porta = 3000;
+import usuarioRotas from "./routers/UsuarioRotas.js";
 
+dotenv.config();
 
-const caminhoDocs = path.join(__dirname, "..", "..", "docs");
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+// Resolver __dirname no ES Module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-servidor.use(express.static(caminhoDocs));
+// Permitir frontend externo (docs/pages)
+app.use(cors());
+app.use(express.json());
 
-servidor.get("/", (requisicao, resposta) => {
-    resposta.sendFile(path.join(caminhoDocs, "index.html"));
+// Servir pasta estática docs/pages para assets (HTML, CSS, JS)
+app.use("/pages", express.static(path.join(__dirname, "../../docs/pages")));
+app.use("/assets", express.static(path.join(__dirname, "../../docs/assets"))); // se tiver CSS/JS separados
+
+// Rota explícita para cadastro.html
+app.get("/cadastro", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../docs/pages/cadastro.html"));
 });
 
+// Rotas da API
+app.use("/api/usuarios", usuarioRotas);
 
-servidor.listen(porta, () => {
-    console.log(`Servidor a rodar em http://localhost:${porta}`);
+// Servidor activo
+app.listen(PORT, () => {
+  console.log(`Servidor bancário activo em http://localhost:${PORT}`);
+  console.log(`Frontend disponível em http://localhost:${PORT}/cadastro`);
 });

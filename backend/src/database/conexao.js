@@ -1,30 +1,41 @@
-// src/controllers/database/conexao.js
-require('dotenv').config();
-const mysql = require('mysql2');
-const fs = require('fs');
-const path = require('path');
+// backend/src/controllers/database/conexao.js
+import dotenv from "dotenv";
+import mysql from "mysql2/promise"; // usa promise para async/await
+import fs from "fs";
+import path from "path";
 
+dotenv.config({
+  path: path.resolve("backend/.env") // << caminho correto para o teu .env
+});
 // Caminho para o certificado SSL
-const caminhoCertificado = path.join(__dirname, 'certs', 'ca.pem');
+const caminhoCertificado = path.resolve("backend/src/database/certs/ca.pem");
 
-const conexao = mysql.createConnection({
+// Criação da conexão com async/await
+export const conexaoMySQL = mysql.createConnection({
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
+  port: Number(process.env.DB_PORT),
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   ssl: {
-    ca: fs.readFileSync(caminhoCertificado)
+    ca: fs.readFileSync(caminhoCertificado),
+    rejectUnauthorized: true // seguro para produção
   }
 });
 
-// Testar conexão
-conexao.connect((erro) => {
-  if (erro) {
-    console.error('Erro ao conectar na base de dados:', erro);
-    return;
+// Função para testar a conexão
+export const testarConexao = async () => {
+  try {
+    const conexao = await conexaoMySQL;
+    await conexao.connect();
+    console.log("✅ Conectado ao MySQL Aiven com sucesso!");
+    await conexao.end(); // encerra a conexão de teste
+  } catch (erro) {
+    console.error("❌ Erro ao conectar na base de dados:", erro);
   }
-  console.log('Conectado ao MySQL Aiven com sucesso!');
-});
+};
 
-module.exports = conexao;
+// Executa teste automático se este arquivo for chamado diretamente
+if (process.argv[1].includes("conexao.js")) {
+  testarConexao();
+}
