@@ -55,4 +55,8 @@
 Dessa vez li bah AQUI Crie as rotas actualizei mng cenas a base de dados nao esta funcionar ainda 
 Para testar faz o cadastro ai 
 
+
+
+Nao vi essas cenas de rotas e outras actualizacoes, aqui nea estrutura mostra como os ficheiros deviam estar, ou eu fiz pull mal ou ainda nao subiste os files, contudo txeca como ficou cadastro se esta good e veja essa cena de pais!
+
 node backend/src/server.js

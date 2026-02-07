@@ -1,39 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" class="h-full bg-gray-900">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Cadastro Bancário</title>
-  <link rel="stylesheet" href="../assets/css/cadastro.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/cadastro.css">
+    <title>Document</title>
 </head>
-<body>
 
-  <h2>Cadastro de Cliente</h2>
+<body class="h-full">
 
-  <form id="formulario-cadastro">
 
-    <input type="text" id="nome_completo" placeholder="Nome completo" required><br>
-    <input type="email" id="email" placeholder="Email" required><br>
-    <input type="number" id="idade" placeholder="Idade" required><br>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
 
-    <select id="sexo" required>
-      <option value="">Sexo</option>
-      <option value="masculino">Masculino</option>
-      <option value="feminino">Feminino</option>
-      <option value="outro">Dual SIM</option>
-    </select><br>
+            <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Cadastro de Usuário</h2>
+        </div>
 
-    <input type="tel" id="telefone" placeholder="Telefone" required><br>
-    <input type="password" id="senha" placeholder="Senha" required><br>
-    <input type="text" id="endereco" placeholder="Endereço" required><br>
-    <input type="text" id="pais" value="Moçambique" required><br>
-    <input type="text" id="cidade" placeholder="Cidade" required><br>
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-    <button type="submit">Cadastrar</button>
-  </form>
+            <form action="#" method="POST" class="space-y-6">
 
-  <p id="mensagem"></p>
+                <div>
+                    <input type="text" id="nome_completo" placeholder="Nome completo" required
+                        class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2" />
+                    <div class="mt-2 mb-2">
+                        <input id="email" type="email" name="email" placeholder="Email" required autocomplete="email"
+                            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                    </div>
+                    <input type="number" id="idade" placeholder="Idade" required
+                        class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+                    <select id="sexo" required
+                        class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+                        <option value="">Sexo</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Prefiro não informar</option>
+                    </select>
 
-  <script src="../assets/js/cadastro.js"></script>
+                    <input type="tel" id="telefone" placeholder="Telefone" required class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+                    <input type="password" id="senha" placeholder="Senha" required class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+                    <input type="text" id="endereco" placeholder="Endereço" required class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+                    <input type="text" id="pais" value="Moçambique" required class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+                    <input type="text" id="cidade" placeholder="Cidade" required class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
+
+
+                </div>
+
+
+                <div>
+                    <button type="submit"
+                        class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Cadastrar</button>
+                        
+                </div>
+            </form>
+
+           
+        </div>
+    </div>
 </body>
-</html>
+
+</html> 
