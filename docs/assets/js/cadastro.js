@@ -7,7 +7,7 @@ formulario.addEventListener("submit", async (evento) => {
   evento.preventDefault();
 
   const dados = {
-    nome: document.getElementById("nome").value,
+    nome: document.getElementById("nome_completo").value,
     email: document.getElementById("email").value,
     idade: Number(document.getElementById("idade").value),
     sexo: document.getElementById("sexo").value,
@@ -37,7 +37,7 @@ formulario.addEventListener("submit", async (evento) => {
 
     mensagem.style.color = "green";
     mensagem.textContent =
-      "Cadastro feito com sucesso. Username: " + resultado.username;
+      "Cadastro feito com sucesso. "
 
     formulario.reset();
 

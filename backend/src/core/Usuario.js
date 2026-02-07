@@ -1,7 +1,7 @@
 export default class Usuario {
 
   constructor({
-    nomeCompleto,
+    nome_completo,
     email,
     telefone,
     idade,
@@ -12,7 +12,7 @@ export default class Usuario {
     cidade,
     username
   }) {
-    this.nomeCompleto = nomeCompleto;
+    this.nome_completo = nome_completo;
     this.email = email;
     this.telefone = telefone;
     this.idade = idade;

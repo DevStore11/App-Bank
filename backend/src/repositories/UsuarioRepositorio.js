@@ -3,39 +3,78 @@ import { conexaoMySQL } from "../database/conexao.js";
 export default class UsuarioRepositorio {
 
   async criar(usuario) {
-    const conexao = await conexaoMySQL.getConnection();
+    const conexao = await conexaoMySQL;
 
     try {
+      
       await conexao.beginTransaction();
 
-      const sql = `
+      const sqlUsuarios = `
         INSERT INTO usuarios
-        (username, nome_completo, email, telefone, idade, sexo,
-         senha_hash, endereco, pais, cidade, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (username,nome_completo, email, telefone, senha_hash, status)
+        VALUES (?, ?,?, ?, ?, ?)
       `;
-
-      await conexao.execute(sql, [
-        usuario.username,
-        usuario.nomeCompleto,
-        usuario.email,
-        usuario.telefone,
-        usuario.idade,
-        usuario.sexo,
-        usuario.senhaHash,
-        usuario.endereco,
-        usuario.pais,
-        usuario.cidade,
-        usuario.status
+      const [resultadoUsuarios] = await conexao.execute(sqlUsuarios, [
+        usuario.username ?? null,
+        usuario.nome_completo ?? null,
+        usuario.email ?? null,
+        usuario.telefone ?? null,
+        usuario.senhaHash ?? null,
+        usuario.status ?? "pendente"
       ]);
 
+      // Pega o id gerado na tabela usuarios
+      const usuarioId = resultadoUsuarios.insertId;
+
+      const sqlPerfil = `
+        INSERT INTO usuario_perfil
+        (usuario_id, nome, idade, sexo, endereco, pais, cidade)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `;
+      await conexao.execute(sqlPerfil, [
+        usuarioId,
+        usuario.nome ?? null,
+        usuario.idade ?? null,
+        usuario.sexo ?? null,
+        usuario.endereco ?? null,
+        usuario.pais ?? null,
+        usuario.cidade ?? null
+      ]);
+
+      // Confirma transação
       await conexao.commit();
 
+      // Retorna info para frontend
+      return { username: usuario.username };
+
     } catch (erro) {
+      // Desfaz transação em caso de erro
       await conexao.rollback();
       throw erro;
-    } finally {
-      conexao.release();
     }
+  }
+
+  // Buscar por email na tabela usuarios
+  async buscarPorEmail(email) {
+    const conexao = await conexaoMySQL;
+
+    const [linhas] = await conexao.execute(
+      "SELECT * FROM usuarios WHERE email = ? LIMIT 1",
+      [email]
+    );
+
+    return linhas.length ? linhas[0] : null;
+  }
+
+  // Buscar por username na tabela usuarios
+  async buscarPorUsername(username) {
+    const conexao = await conexaoMySQL;
+
+    const [linhas] = await conexao.execute(
+      "SELECT * FROM usuarios WHERE username = ? LIMIT 1",
+      [username]
+    );
+
+    return linhas.length ? linhas[0] : null;
   }
 }

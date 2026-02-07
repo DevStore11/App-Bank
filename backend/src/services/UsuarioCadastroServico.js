@@ -19,7 +19,7 @@ export default class UsuarioCadastroServico {
     const username = gerarUsername(dados.nome);
 
     const usuario = new Usuario({
-      nomeCompleto: dados.nome,
+      nome_completo: dados.nome,
       email: dados.email,
       telefone: dados.telefone,
       idade: dados.idade,
@@ -36,7 +36,7 @@ export default class UsuarioCadastroServico {
     await this.emailServico.enviarUsername(
       usuario.email,
       usuario.username,
-      usuario.nomeCompleto
+      usuario.nome_completo
     );
 
     return { username };
