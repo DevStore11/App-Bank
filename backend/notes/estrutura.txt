@@ -59,4 +59,7 @@ Para testar faz o cadastro ai
 
 Nao vi essas cenas de rotas e outras actualizacoes, aqui nea estrutura mostra como os ficheiros deviam estar, ou eu fiz pull mal ou ainda nao subiste os files, contudo txeca como ficou cadastro se esta good e veja essa cena de pais!
 
+Nao actualize na estrutura txunaste cadastro recebeste o email
+Esse css ta se cor nao e impactante
+
 node backend/src/server.js
