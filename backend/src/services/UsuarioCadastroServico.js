@@ -13,32 +13,58 @@ export default class UsuarioCadastroServico {
   }
 
   async executar(dados) {
-    UsuarioValidator.validarCadastro(dados);
+    try {
+      // ================= 1️⃣ Validação =================
+      UsuarioValidator.validarCadastro(dados);
 
-    const senhaHash = await bcrypt.hash(dados.senha, 12);
-    const username = gerarUsername(dados.nome);
+      const nomeParaUsername = dados.nome_completo?.trim();
+      if (!nomeParaUsername) {
+        throw new Error("Nome completo é obrigatório para gerar username");
+      }
 
-    const usuario = new Usuario({
-      nome_completo: dados.nome,
-      email: dados.email,
-      telefone: dados.telefone,
-      idade: dados.idade,
-      sexo: dados.sexo,
-      senhaHash,
-      endereco: dados.endereco,
-      pais: dados.pais,
-      cidade: dados.cidade,
-      username
-    });
+      // ================= 2️⃣ Hash da senha =================
+      const senhaHash = await bcrypt.hash(dados.senha, 12);
 
-    await this.repositorio.criar(usuario);
+      // ================= 3️⃣ Gerar username seguro =================
+      const username = gerarUsername(nomeParaUsername);
 
-    await this.emailServico.enviarUsername(
-      usuario.email,
-      usuario.username,
-      usuario.nome_completo
-    );
+      // ================= 4️⃣ Criar entidade Usuário =================
+      const usuario = new Usuario({
+        nome_completo: nomeParaUsername,
+        email: dados.email,
+        telefone: dados.telefone,
+        idade: dados.idade,
+        sexo: dados.sexo,
+        senhaHash,
+        endereco: dados.endereco,
+        pais: dados.pais,
+        cidade: dados.cidade,
+        username
+      });
 
-    return { username };
+      // ================= 5️⃣ Salvar no banco =================
+      await this.repositorio.criar(usuario);
+
+      // ================= 6️⃣ Enviar email com username =================
+      try {
+        await this.emailServico.enviarUsername(
+          usuario.email,
+          usuario.username,
+          usuario.nome_completo
+        );
+      } catch (erroEmail) {
+        console.error("Erro ao enviar email:", erroEmail.message);
+      }
+
+      // ================= ✅ Retornar sucesso =================
+      return { 
+        mensagem: "Usuário cadastrado com sucesso",
+        username 
+      };
+
+    } catch (erro) {
+      console.error("Erro no cadastro:", erro.message);
+      throw erro;
+    }
   }
 }

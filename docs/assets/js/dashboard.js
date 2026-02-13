@@ -1,29 +1,53 @@
-window.addEventListener("DOMContentLoaded", async () => {
-    const token = localStorage.getItem("token");
+// Selecionar elementos da dashboard
+const tituloDashboard = document.querySelector("#titulo-dashboard");
+const usuarioInfo = document.querySelector("#usuario-info");
 
-    if (!token) {
-        alert("Você precisa estar logado.");
-        window.location.href = "/login";
-        return;
+// Função para logout
+function logout() {
+  localStorage.removeItem("tokenAppBank");
+  localStorage.removeItem("roleAppBank");
+  window.location.href = "/login";
+}
+
+// Pegar token do localStorage
+const token = localStorage.getItem("tokenAppBank");
+const role = localStorage.getItem("roleAppBank");
+
+// Se não tiver token, redireciona para login
+if (!token) {
+  window.location.href = "/login";
+}
+
+// Função para buscar dados do backend
+async function carregarDashboard() {
+  try {
+    const resposta = await fetch("/api/usuarios/dashboard", {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    });
+
+    const dados = await resposta.json();
+
+    if (!resposta.ok) {
+      console.error("Erro ao carregar dashboard:", dados.erro);
+      logout(); // token inválido ou expirado
+      return;
     }
 
-    try {
-        const resposta = await fetch("http://localhost:3000/api/dashboard", {
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        });
+    // Exibir informações do usuário
+    tituloDashboard.textContent = `Bem-vindo à tua Dashboard`;
+    usuarioInfo.innerHTML = `
+      <p><strong>Username:</strong> ${dados.username || ""}</p>
+      <p><strong>Role:</strong> ${role}</p>
+    `;
 
-        const dados = await resposta.json();
+  } catch (erro) {
+    console.error("Erro de conexão:", erro);
+    logout();
+  }
+}
 
-        if (resposta.ok) {
-            document.getElementById("mensagem-usuario").textContent = dados.mensagem;
-        } else {
-            alert(dados.mensagem);
-            window.location.href = "/login";
-        }
-    } catch (erro) {
-        console.error("Erro ao carregar dashboard:", erro);
-        window.location.href = "/login";
-    }
-});
+// Chamar função ao carregar a página
+window.addEventListener("DOMContentLoaded", carregarDashboard);

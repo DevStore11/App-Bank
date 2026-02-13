@@ -1,78 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt" class="h-full bg-gray-900">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/css/cadastro.css">
   <title>Cadastro - PrimePay</title>
 </head>
 
-<body class="h-full">
+<body>
 
-  <div class="flex flex-col justify-center     lg:px-8">
-    <h1 class="mt-10 text-center text-3xl font-bold text-white">PrimePay</h1>
-    <p class="text-white text-center mt-10 font-semibold">Faça o seu cadastro e comece ja disfrutando dos nossos servicos
-    </p>
+  <div style="text-align:center; margin-top:30px;">
+    <h1>PrimePay</h1>
+    <p>Faça o seu cadastro e comece já desfrutando dos nossos serviços</p>
   </div>
 
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+  <div style="max-width:400px; margin:50px auto;">
+    <h2>Cadastro de Usuário</h2>
 
-      <h2 class="text-center text-2xl/9 font-bold tracking-tight text-white">Cadastro de Usuário</h2>
-    </div>
+    <form id="formulario-cadastro" method="POST">
 
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <input type="text" id="nome_completo" placeholder="Nome completo" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <input type="email" id="email" placeholder="Email" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <input type="number" id="idade" placeholder="Idade" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <select id="sexo" required style="width:100%; padding:10px; margin-bottom:10px;">
+        <option value="">Sexo</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Prefiro não informar</option>
+      </select>
+      <input type="tel" id="telefone" placeholder="Telefone" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <input type="password" id="senha" placeholder="Senha" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <input type="text" id="endereco" placeholder="Endereço" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <input type="text" id="pais" value="Moçambique" required style="width:100%; padding:10px; margin-bottom:10px;">
+      <input type="text" id="cidade" placeholder="Cidade" required style="width:100%; padding:10px; margin-bottom:10px;">
 
-      <form action="#" id="formulario-cadastro" method="POST" class="space-y-6">
+      <button type="submit" style="width:100%; padding:10px; margin-top:10px;">Cadastrar</button>
+    </form>
 
-        <div>
-          <input type="text" id="nome_completo" placeholder="Nome completo" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2" />
-          <div class="mt-2 mb-2">
-            <input id="email" type="email" name="email" placeholder="Email" required autocomplete="email"
-              class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
-          </div>
-          <input type="number" id="idade" placeholder="Idade" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-          <select id="sexo" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-            <option value="">Sexo</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Prefiro não informar</option>
-          </select>
+    <p id="mensagem" style="text-align:center; margin-top:15px;"></p>
 
-          <input type="tel" id="telefone" placeholder="Telefone" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-          <input type="password" id="senha" placeholder="Senha" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-          <input type="text" id="endereco" placeholder="Endereço" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-          <input type="text" id="pais" value="Moçambique" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-          <input type="text" id="cidade" placeholder="Cidade" required
-            class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 mb-2">
-
-
-        </div>
-
-
-        <div>
-          <button type="submit"
-            class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Cadastrar</button>
-
-        </div>
-      </form>
-      <footer class="text-center text-gray-500 mt-10">Termos e condicoes aplicaveis </footer>
-      <p id="mensagem"></p>
-
-    </div>
+    <footer style="text-align:center; margin-top:20px;">Termos e condições aplicáveis</footer>
+    <p style="text-align:center; margin-top:10px;"><a href="/">Voltar ao início</a></p>
   </div>
-  <a href="/">Voltar ao início</a>
 
-  <script src="../assets/js/cadastro.js"></script>
+  <script type="module" src="../assets/js/cadastro.js"></script>
 </body>
 
 </html>

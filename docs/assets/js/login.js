@@ -1,45 +1,59 @@
-// Seleção do formulário
-const formularioLogin = document.getElementById("formulario-login");
+// Selecionar formulário e campos
+const formLogin = document.querySelector("#form-login");
+const inputUsername = document.querySelector("#username");
+const inputSenha = document.querySelector("#senha");
+const mensagemErro = document.querySelector("#mensagem-erro");
 
-formularioLogin.addEventListener("submit", async (evento) => {
-    evento.preventDefault(); // Evita reload da página
+// Função para mostrar erro
+function exibirErro(msg) {
+  mensagemErro.textContent = msg;
+  mensagemErro.style.display = "block";
+}
 
-    // Captura dados do formulário
-    const username = document.getElementById("username").value.trim();
-    const senha = document.getElementById("senha").value.trim();
+// Ouvir submit do formulário
+formLogin.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    // Validação simples
-    if (!username || !senha) {
-        alert("Por favor, preencha todos os campos.");
-        return;
+  // Limpar mensagens
+  mensagemErro.style.display = "none";
+
+  const username = inputUsername.value.trim();
+  const senha = inputSenha.value.trim();
+
+  if (!username || !senha) {
+    exibirErro("Preencha username e senha.");
+    return;
+  }
+
+  try {
+    const resposta = await fetch("/api/usuarios/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, senha })
+    });
+
+    const dados = await resposta.json();
+
+    if (!resposta.ok) {
+      exibirErro(dados.erro || "Erro no login.");
+      return;
     }
 
-    try {
-        // Requisição para o backend
-        const resposta = await fetch("http://localhost:3000/api/auth/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ username, senha })
-        });
+    // Salvar token no localStorage
+    localStorage.setItem("tokenAppBank", dados.token);
+    localStorage.setItem("roleAppBank", dados.role);
 
-        const dados = await resposta.json();
-
-        if (resposta.ok) {
-            // Login bem-sucedido
-            localStorage.setItem("token", dados.token); // Salva JWT
-            alert(dados.mensagem);
-
-            // Redireciona para dashboard
-            window.location.href = "dashboard.html";
-        } else {
-            // Login falhou
-            alert(dados.mensagem || "Erro ao tentar entrar.");
-        }
-
-    } catch (erro) {
-        console.error("Erro na requisição de login:", erro);
-        alert("Erro de conexão com o servidor. Tente novamente.");
+    // Redirecionar para dashboard conforme role
+    if (dados.role === "admin") {
+      window.location.href = "/dashboard-admin";
+    } else {
+      window.location.href = "/dashboard";
     }
+
+  } catch (erro) {
+    exibirErro("Erro de conexão com o servidor.");
+    console.error("Erro login.js:", erro);
+  }
 });

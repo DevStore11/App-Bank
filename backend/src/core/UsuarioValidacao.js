@@ -1,24 +1,39 @@
 export default class UsuarioValidacao {
 
   static validarCadastro(dados) {
-    if (!dados.nome || dados.nome.length < 5) {
+    // Nome completo
+    const nome = dados.nome_completo || "";
+    if (nome.trim().length < 5) {
       throw new Error("Nome completo inválido");
     }
 
-    if (!dados.email || !dados.email.includes("@")) {
+    // Email
+    const email = dados.email || "";
+    if (!email.includes("@")) {
       throw new Error("Email inválido");
     }
 
-    if (!dados.telefone || dados.telefone.length < 8) {
+    // Telefone
+    const telefone = dados.telefone || "";
+    if (telefone.length < 8) {
       throw new Error("Telefone inválido");
     }
 
-    if (dados.idade < 18) {
+    // Idade
+    const idade = Number(dados.idade) || 0;
+    if (idade < 18) {
       throw new Error("Idade mínima é 18 anos");
     }
 
-    if (!dados.senha || dados.senha.length < 8) {
+    // Senha
+    const senha = dados.senha || "";
+    if (senha.length < 8) {
       throw new Error("Senha deve ter no mínimo 8 caracteres");
+    }
+
+    // Sexo (opcional)
+    if (dados.sexo && !["masculino","feminino","outro"].includes(dados.sexo)) {
+      throw new Error("Sexo inválido");
     }
   }
 }
