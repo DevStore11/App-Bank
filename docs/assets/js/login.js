@@ -1,20 +1,17 @@
-// Selecionar formulário e campos
 const formLogin = document.querySelector("#form-login");
 const inputUsername = document.querySelector("#username");
 const inputSenha = document.querySelector("#senha");
 const mensagemErro = document.querySelector("#mensagem-erro");
 
-// Função para mostrar erro
+// Mostrar erro
 function exibirErro(msg) {
   mensagemErro.textContent = msg;
   mensagemErro.style.display = "block";
 }
 
-// Ouvir submit do formulário
+// Submit do formulário
 formLogin.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  // Limpar mensagens
   mensagemErro.style.display = "none";
 
   const username = inputUsername.value.trim();
@@ -28,9 +25,7 @@ formLogin.addEventListener("submit", async (e) => {
   try {
     const resposta = await fetch("/api/usuarios/login", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, senha })
     });
 
@@ -41,11 +36,11 @@ formLogin.addEventListener("submit", async (e) => {
       return;
     }
 
-    // Salvar token no localStorage
+    // Salvar token e role no localStorage
     localStorage.setItem("tokenAppBank", dados.token);
     localStorage.setItem("roleAppBank", dados.role);
 
-    // Redirecionar para dashboard conforme role
+    // Redirecionar conforme role
     if (dados.role === "admin") {
       window.location.href = "/dashboard-admin";
     } else {

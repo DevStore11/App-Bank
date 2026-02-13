@@ -1,5 +1,8 @@
-import express from "express";
 import dotenv from "dotenv";
+
+dotenv.config();
+
+import express from "express";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -7,7 +10,6 @@ import { fileURLToPath } from "url";
 // ================= ROTAS =================
 import usuarioRotas from "./routers/UsuarioRotas.js"; // cadastro, login, dashboards
 
-dotenv.config();
 
 const app = express();
 const PORTA = process.env.PORT || 3000;

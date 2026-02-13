@@ -7,56 +7,17 @@
 </head>
 <body>
 
-  <main>
-    <section id="login-container">
       <h1>Entrar na PrimePay</h1>
 
-      <form id="formulario-login">
+      <form id="form-login">
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="senha" placeholder="Senha">
+  <button type="submit">Login</button>
+  <p id="mensagem-erro" style="color:red; display:none;"></p>
+</form>
 
-        <!-- Campo username -->
-        <div class="grupo-campo">
-          <label for="username">Nome de Utilizador</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Digite seu nome de utilizador"
-            required
-          >
-        </div>
+<script src="../assets/js/login.js"></script>
 
-        <!-- Campo senha -->
-        <div class="grupo-campo">
-          <label for="senha">Senha</label>
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Digite sua senha"
-            required
-          >
-        </div>
-
-        <!-- Botão login -->
-        <div class="grupo-campo">
-          <button type="submit" id="botao-login">Entrar</button>
-        </div>
-
-      </form>
-
-      <!-- Links auxiliares -->
-      <div id="links-auxiliares">
-        <p><a href="recuperarSenha.html">Esqueceu a senha?</a></p>
-        <p>Não tem conta? <a href="cadastro.html">Criar conta</a></p>
-      </div>
-
-      <p><a href="/">Voltar ao início</a></p>
-
-    </section>
-  </main>
-
-  <!-- Script de login -->
-  <script src="../assets/js/login.js"></script>
 
 </body>
 </html>
