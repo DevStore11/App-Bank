@@ -4,54 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimePay | Login</title>
-  <link rel="stylesheet" href="../assets/css/login.css">
-
-  
 </head>
-
 <body>
 
-  <div class="container-login">
-    <h1>Entrar</h1>
+  <main>
+    <section id="login-container">
+      <h1>Entrar na PrimePay</h1>
 
-    <form id="formulario-login">
+      <form id="formulario-login">
 
-      <div class="grupo-campo">
-        <label for="nome_usuario">Nome de Utilizador</label>
-        <input
-          type="text"
-          id="nome_usuario"
-          name="nome_usuario"
-          placeholder="Email ou telefone"
-          required
-        >
+        <!-- Campo username -->
+        <div class="grupo-campo">
+          <label for="username">Nome de Utilizador</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Digite seu nome de utilizador"
+            required
+          >
+        </div>
+
+        <!-- Campo senha -->
+        <div class="grupo-campo">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            required
+          >
+        </div>
+
+        <!-- Botão login -->
+        <div class="grupo-campo">
+          <button type="submit" id="botao-login">Entrar</button>
+        </div>
+
+      </form>
+
+      <!-- Links auxiliares -->
+      <div id="links-auxiliares">
+        <p><a href="recuperarSenha.html">Esqueceu a senha?</a></p>
+        <p>Não tem conta? <a href="cadastro.html">Criar conta</a></p>
       </div>
 
-      <div class="grupo-campo">
-        <label for="senha">Senha</label>
-        <input
-          type="password"
-          id="senha"
-          name="senha"
-          required
-        >
-      </div>
+      <p><a href="/">Voltar ao início</a></p>
 
-      <button type="submit" class="botao-login">
-        Entrar
-      </button>
-    </form>
+    </section>
+  </main>
 
-    <div class="links-auxiliares">
-      <p>
-        <a href="recuperarSenha.html">Esqueceu a senha?</a>
-      </p>
-      <p>
-        Não tem conta? <a href="cadastro.html">Criar conta</a>
-      </p>
-    </div>
-  </div>
-<a href="/">Voltar ao início</a>
+  <!-- Script de login -->
   <script src="../assets/js/login.js"></script>
 
 </body>

@@ -4,7 +4,10 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// Rotas
 import usuarioRotas from "./routers/UsuarioRotas.js";
+import authRotas from "./auth/authRoutes.js";       // rota de login
+import dashboardRotas from "./routers/DashboardRotas.js"; // rota privada dashboard
 
 dotenv.config();
 
@@ -15,7 +18,7 @@ const PORTA = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middlewares globais
+// ================= MIDDLEWARES GLOBAIS =================
 app.use(cors());
 app.use(express.json());
 
@@ -24,26 +27,28 @@ app.use("/assets", express.static(path.join(__dirname, "../../docs/assets")));
 app.use("/pages", express.static(path.join(__dirname, "../../docs/pages")));
 
 // ================= ROTAS FRONTEND =================
-
-// Página inicial → index.html
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../../docs/index.html"));
 });
 
-// Página cadastro
 app.get("/cadastro", (req, res) => {
     res.sendFile(path.join(__dirname, "../../docs/pages/cadastro.html"));
 });
 
-// Página login
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "../../docs/pages/login.html"));
 });
 
-// ================= ROTAS API =================
-app.use("/api/usuarios", usuarioRotas);
+app.get("/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "../../docs/pages/dashboard.html"));
+});
 
-// Servidor
+// ================= ROTAS API =================
+app.use("/api/usuarios", usuarioRotas);   // CRUD de usuários
+app.use("/api/auth", authRotas);          // login
+app.use("/api/dashboard", dashboardRotas);// rota privada da dashboard
+
+// ================= SERVIDOR =================
 app.listen(PORTA, () => {
     console.log(`Servidor activo em http://localhost:${PORTA}`);
     console.log(`Frontend → http://localhost:${PORTA}`);

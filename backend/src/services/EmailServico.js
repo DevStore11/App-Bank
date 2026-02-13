@@ -41,7 +41,7 @@ export default class EmailServico {
 
     try {
       await this.transporter.sendMail(mailOptions);
-      console.log(`Email enviado para ${emailDestinatario}`);
+      console.log(`Email enviado`);
     } catch (erro) {
       console.error("Erro ao enviar email:", erro);
       throw new Error("Não foi possível enviar email com o username.");
