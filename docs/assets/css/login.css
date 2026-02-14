@@ -1,77 +1,8 @@
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container-login {
-      max-width: 400px;
-      margin: 80px auto;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 25px;
-    }
-
-    .grupo-campo {
-      margin-bottom: 15px;
-    }
-
-    .grupo-campo label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .grupo-campo input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    .grupo-campo input:focus {
-      outline: none;
-      border-color: #3498db;
-    }
-
-    .botao-login {
-      width: 100%;
-      padding: 12px;
-      background-color: #3498db;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .botao-login:hover {
-      background-color: #2980b9;
-    }
-
-    .links-auxiliares {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    .links-auxiliares a {
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    .links-auxiliares a:hover {
-      text-decoration: underline;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    
