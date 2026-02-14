@@ -36,7 +36,7 @@ export default class UsuarioRepositorio {
 
       await conexao.commit();
 
-      // Retorna info básica
+      // ✅ Aqui está a correção
       return { username: usuario.username, id: resultado.insertId };
 
     } catch (erro) {
@@ -69,4 +69,46 @@ export default class UsuarioRepositorio {
   async validarSenha(usuario, senhaInformada) {
     return bcrypt.compare(senhaInformada, usuario.senha_hash);
   }
+
+  // Listar todos os usuários
+  async listarTodos() {
+    const conexao = await conexaoMySQL;
+    const [linhas] = await conexao.execute(
+      "SELECT id, username, nome_completo, email, telefone, idade, sexo, endereco, pais, cidade, status FROM usuarios_AppBank"
+    );
+    return linhas;
+  }
+
+  // Apagar usuário
+  async apagar(id) {
+    const conexao = await conexaoMySQL;
+    const [resultado] = await conexao.execute(
+      "DELETE FROM usuarios_AppBank WHERE id = ?",
+      [id]
+    );
+    return resultado.affectedRows > 0;
+  }
+
+  // Editar usuário
+  async editar(id, dadosAtualizados) {
+    const conexao = await conexaoMySQL;
+
+    // Preparar valores e garantir null se undefined
+    const valores = [
+      dadosAtualizados.nome_completo ?? null,
+      dadosAtualizados.email ?? null,
+      dadosAtualizados.telefone ?? null,
+      id
+    ];
+
+    const sql = `
+      UPDATE usuarios_AppBank
+      SET nome_completo = ?, email = ?, telefone = ?
+      WHERE id = ?
+    `;
+
+    const [resultado] = await conexao.execute(sql, valores);
+    return resultado.affectedRows > 0;
+  }
+
 }

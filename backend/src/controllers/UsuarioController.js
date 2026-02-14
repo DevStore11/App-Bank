@@ -18,7 +18,6 @@ export async function cadastrarUsuario(req, res) {
 }
 
 // ================= LOGIN DE USUÁRIO =================
-// LOGIN DE USUÁRIO
 export async function loginUsuario(req, res) {
   const { username, senha } = req.body;
 
@@ -58,3 +57,47 @@ export async function loginUsuario(req, res) {
   }
 }
 
+// ================= LISTAR TODOS OS USUÁRIOS =================
+export async function listarUsuarios(req, res) {
+  try {
+    const usuarios = await usuarioRepositorio.listarTodos(); // ✅ novo método no repositório
+    res.json(usuarios);
+  } catch (erro) {
+    console.error("Erro ao listar usuários:", erro.message);
+    res.status(500).json({ erro: "Erro ao listar usuários" });
+  }
+}
+
+// ================= APAGAR USUÁRIO =================
+export async function apagarUsuario(req, res) {
+  const { id } = req.params;
+  try {
+    const sucesso = await usuarioRepositorio.apagar(id); // ✅ novo método no repositório
+    if (sucesso) {
+      res.json({ mensagem: "Usuário apagado com sucesso" });
+    } else {
+      res.status(404).json({ erro: "Usuário não encontrado" });
+    }
+  } catch (erro) {
+    console.error("Erro ao apagar usuário:", erro.message);
+    res.status(500).json({ erro: "Erro ao apagar usuário" });
+  }
+}
+
+// ================= EDITAR USUÁRIO =================
+export async function editarUsuario(req, res) {
+  const { id } = req.params;
+  const dadosAtualizados = req.body;
+
+  try {
+    const sucesso = await usuarioRepositorio.editar(id, dadosAtualizados); // ✅ novo método no repositório
+    if (sucesso) {
+      res.json({ mensagem: "Usuário atualizado com sucesso" });
+    } else {
+      res.status(404).json({ erro: "Usuário não encontrado" });
+    }
+  } catch (erro) {
+    console.error("Erro ao atualizar usuário:", erro.message);
+    res.status(500).json({ erro: "Erro ao atualizar usuário" });
+  }
+}

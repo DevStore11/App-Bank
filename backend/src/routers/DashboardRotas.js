@@ -1,14 +1,15 @@
 import express from "express";
-import { verificarToken } from "../auth/authMiddleware.js";
+import {listarUsuarios,apagarUsuario,editarUsuario} from "../controllers/UsuarioController.js";
 
 const router = express.Router();
 
-// Rota privada: retorna dados do usuário logado
-router.get("/", verificarToken, (req, res) => {
-    res.status(200).json({
-        mensagem: `Bem-vindo ${req.usuario.username}`,
-        usuario: req.usuario
-    });
-});
+// Listar todos os usuários
+router.get("/usuarios",listarUsuarios);
+
+// Apagar usuário
+router.delete("/usuarios/:id", apagarUsuario);
+
+// Editar usuário
+router.put("/usuarios/:id", editarUsuario);
 
 export default router;

@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 
 // ================= ROTAS =================
 import usuarioRotas from "./routers/UsuarioRotas.js"; // cadastro, login, dashboards
+import dashboardRotas from "./routers/DashboardRotas.js"; // ✅ Import dashboard-admin
 
 
 const app = express();
@@ -51,6 +52,8 @@ app.get("/dashboard-admin", (req, res) => {
 // ================= ROTAS API =================
 // Todas as rotas de usuários (cadastro, login, dashboards protegidos)
 app.use("/api/usuarios", usuarioRotas);
+// Nova rota API para dashboard-admin
+app.use("/api/dashboard", dashboardRotas);
 
 // ================= SERVIDOR =================
 app.listen(PORTA, () => {
