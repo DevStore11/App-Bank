@@ -1,23 +1,121 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PrimePay | Login</title>
-</head>
-<body>
 
-      <h1>Entrar na PrimePay</h1>
-
-      <form id="form-login">
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="senha" placeholder="Senha">
-  <button type="submit">Login</button>
-  <p id="mensagem-erro" style="color:red; display:none;"></p>
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrimePay | Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a182e",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Main Container -->
+<div class="w-full max-w-[440px] flex flex-col gap-8">
+<!-- Header/Branding -->
+<div class="flex flex-col items-center gap-4 text-center">
+<div class="bg-primary text-white p-3 rounded-xl shadow-lg">
+<span class="material-symbols-outlined text-4xl">shield_person</span>
+</div>
+<div class="space-y-1">
+<h2 class="text-primary dark:text-white text-2xl font-bold tracking-tight">PrimePay</h2>
+<h1 class="text-gray-500 dark:text-gray-400 text-lg font-medium">Entrar na PrimePay</h1>
+</div>
+</div>
+<!-- Login Card -->
+<div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<form class="flex flex-col gap-6" id="form-login">
+<!-- Username Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary dark:text-gray-200 ml-1" for="username">Usuário</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary dark:focus:border-primary outline-none transition-all text-primary dark:text-white placeholder:text-gray-400" id="username" placeholder="Digite seu usuário" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<label class="text-sm font-semibold text-primary dark:text-gray-200" for="senha">Senha</label>
+<a class="text-xs font-medium text-primary/70 hover:text-primary dark:text-gray-400 underline decoration-primary/20 underline-offset-4" href="#">Esqueceu a senha?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary dark:focus:border-primary outline-none transition-all text-primary dark:text-white placeholder:text-gray-400" id="senha" placeholder="Sua senha secreta" type="password"/>
+</div>
+</div>
+<!-- Error Message (Hidden by default) -->
+<p class="hidden text-sm font-medium text-red-600 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800 p-3 rounded-lg flex items-center gap-2" id="mensagem-erro">
+<span class="material-symbols-outlined text-[18px]">error</span>
+<span>Credenciais inválidas. Tente novamente.</span>
+</p>
+<!-- Submit Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+<span>Acessar Conta</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
 </form>
-
+</div>
+<!-- Footer Actions -->
+<div class="flex flex-col items-center gap-6">
+<p class="text-sm text-gray-500 dark:text-gray-400">
+                Não possui uma conta? 
+                <a class="text-primary dark:text-white font-bold hover:underline underline-offset-4" href="/cadastro">Criar conta grátis</a>
+</p>
+<div class="flex items-center gap-4 text-gray-400 text-xs font-medium uppercase tracking-widest">
+<div class="h-px w-8 bg-gray-200 dark:bg-gray-800"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                    Ambiente Seguro
+                </div>
+<div class="h-px w-8 bg-gray-200 dark:bg-gray-800"></div>
+</div>
+</div>
+</div>
+<!-- Background Pattern Decoration (Visual Only) -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 opacity-30 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
 <script src="../assets/js/login.js"></script>
-
-
-</body>
-</html>
+</body></html>

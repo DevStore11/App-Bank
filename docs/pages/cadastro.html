@@ -1,50 +1,153 @@
 <!DOCTYPE html>
-<html lang="pt">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/cadastro.css">
-  <title>Cadastro - PrimePay</title>
-</head>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cadastro - PrimePay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+ <script src="../assets/js/cadastro-tailwind.js"></script>
+ <link rel="stylesheet" href="../assets/css/cadastro.css">
 
-<body>
 
-  <div style="text-align:center; margin-top:30px;">
-    <h1>PrimePay</h1>
-    <p>Faça o seu cadastro e comece já desfrutando dos nossos serviços</p>
-  </div>
 
-  <div style="max-width:400px; margin:50px auto;">
-    <h2>Cadastro de Usuário</h2>
-
-    <form id="formulario-cadastro" method="POST">
-
-      <input type="text" id="nome_completo" placeholder="Nome completo" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <input type="email" id="email" placeholder="Email" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <input type="number" id="idade" placeholder="Idade" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <select id="sexo" required style="width:100%; padding:10px; margin-bottom:10px;">
-        <option value="">Sexo</option>
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-        <option value="outro">Prefiro não informar</option>
-      </select>
-      <input type="tel" id="telefone" placeholder="Telefone" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <input type="password" id="senha" placeholder="Senha" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <input type="text" id="endereco" placeholder="Endereço" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <input type="text" id="pais" value="Moçambique" required style="width:100%; padding:10px; margin-bottom:10px;">
-      <input type="text" id="cidade" placeholder="Cidade" required style="width:100%; padding:10px; margin-bottom:10px;">
-
-      <button type="submit" style="width:100%; padding:10px; margin-top:10px;">Cadastrar</button>
-    </form>
-
-    <p id="mensagem" style="text-align:center; margin-top:15px;"></p>
-
-    <footer style="text-align:center; margin-top:20px;">Termos e condições aplicáveis</footer>
-    <p style="text-align:center; margin-top:10px;"><a href="/">Voltar ao início</a></p>
-  </div>
-
-  <script type="module" src="../assets/js/cadastro.js"></script>
-</body>
-
-</html>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+        .form-input.is-valid {
+            border-color: #10b981 !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310b981'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5rem;
+        }
+        .form-input.is-invalid {
+            border-color: #ef4444 !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ef4444'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5rem;
+        }
+        /* Hide icons for inputs with prefix icons to avoid overlap */
+        .relative .form-input.is-valid, .relative .form-input.is-invalid {
+            background-image: none;
+        }
+        .error-message {
+            font-size: 0.75rem;
+            color: #ef4444;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .is-invalid + .error-message {
+            display: block;
+        }
+    </style></head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display">
+<div class="flex flex-col min-h-screen max-w-lg mx-auto bg-white dark:bg-background-dark shadow-xl">
+<!-- Top App Bar / Header -->
+<header class="flex flex-col items-center px-6 pt-8 pb-6 border-b border-primary/10">
+<div class="flex items-center justify-between w-full mb-6">
+<a class="text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</a>
+<h1 class="text-primary dark:text-white text-2xl font-bold tracking-tight">PrimePay</h1>
+<div class="w-6"></div> <!-- Spacer -->
+</div>
+<div class="w-full rounded-xl overflow-hidden mb-6 relative h-40 bg-primary/5">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+<p class="text-white text-lg font-semibold leading-snug">
+                        Faça o seu cadastro e comece já desfrutando dos nossos serviços
+                    </p>
+</div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Modern digital banking interface showing financial growth" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeHj22JaonrMhLE41mV5ur3NDKZwVtsDX3Q8pSdfRpUInwpgy2cbddcvpUWeb3ytUT-hCdCjSNzUb9O4eDwHiLcWO-bxIiLfKvJxkKUnDlckBjKXtgxQzawPC3tp7q5Z_q-JvrYXzhWePsxhTL-ILakq2Pvno1yKXS14sVVEImudjaea5SKp2SjZEJHSaj7dwnEEcKd7ThtYOOLIPEFAg3Xfu8OLep3G_OLSkax9td8_dkJrAEs68V2UodVrLV0a_Vv8ssFeTGoqc')"></div>
+</div>
+</header>
+<!-- Main Content / Form -->
+<main class="flex-1 px-6 py-8">
+<form class="space-y-5" id="formulario-cadastro">
+<!-- Nome Completo -->
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="nome_completo">Nome Completo</label>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="nome_completo" name="nome_completo" placeholder="Ex: João Silva" type="text"/><span class="error-message" id="error-nome_completo">Por favor, insira seu nome completo.</span>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="email">E-mail</label>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="email" name="email" placeholder="seu@email.com" type="email"/><span class="error-message" id="error-email">E-mail inválido.</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Idade -->
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="idade">Idade</label>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="idade" name="idade" type="number"/><span class="error-message" id="error-idade">Idade obrigatória.</span>
+</div>
+<!-- Sexo -->
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="sexo">Sexo</label>
+<select class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all appearance-none" id="sexo" name="sexo">
+<option value="masculino">Masculino</option>
+<option value="feminino">Feminino</option>
+<option value="outro">Outro</option>
+</select><span class="error-message" id="error-sexo">Selecione uma opção.</span>
+</div>
+</div>
+<!-- Telefone -->
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="telefone">Telefone</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/40 material-symbols-outlined">call</span>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="telefone" name="telefone" placeholder="+258" type="tel"/><span class="absolute right-4 top-1/2 -translate-y-1/2 validation-icon hidden"></span>
+</div><span class="error-message" id="error-telefone">Número de telefone inválido.</span>
+</div>
+<!-- Senha -->
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="senha">Senha</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary/40 material-symbols-outlined">lock</span>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="senha" name="senha" placeholder="••••••••" type="password"/><span class="absolute right-4 top-1/2 -translate-y-1/2 validation-icon hidden"></span>
+</div><span class="error-message" id="error-senha">A senha deve ter pelo menos 8 caracteres.</span>
+</div>
+<hr class="border-primary/10 my-6"/>
+<!-- Endereço Section -->
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="endereco">Endereço Residencial</label>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="endereco" name="endereco" placeholder="Rua, Bairro, Casa n°" type="text"/><span class="error-message" id="error-endereco">Endereço é obrigatório.</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="pais">País</label>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="pais" name="pais" type="text" value="Moçambique"/><span class="error-message" id="error-pais">País inválido.</span>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary/70 dark:text-white/70 text-sm font-medium" for="cidade">Cidade</label>
+<input class="form-input w-full rounded-lg border-primary/20 bg-background-light dark:bg-white/5 dark:border-white/10 dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="cidade" name="cidade" placeholder="Ex: Maputo" type="text"/><span class="error-message" id="error-cidade">Cidade é obrigatória.</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold h-14 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] mt-4" type="submit">
+                    Cadastrar
+                </button>
+<!-- Feedback Message -->
+<p class="text-center text-sm min-h-[1.25rem] font-medium text-primary/60 dark:text-white/60" id="mensagem"></p>
+</form>
+</main>
+<!-- Footer -->
+<footer class="px-6 py-8 flex flex-col items-center gap-4 border-t border-primary/5">
+<p class="text-primary/50 dark:text-white/40 text-xs text-center">
+                Termos e condições aplicáveis
+            </p>
+<a class="text-primary dark:text-white font-semibold flex items-center gap-2 hover:underline" href="/">
+<span class="material-symbols-outlined text-lg">home</span>
+                Voltar ao início
+            </a>
+</footer>
+</div>
+<script src="../assets/js/cadastro.js"></script>
+</body></html>
