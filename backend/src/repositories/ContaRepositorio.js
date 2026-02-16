@@ -4,7 +4,7 @@ export default class ContaRepositorio {
   async criar(dadosConta) {
     const conexao = await conexaoMySQL;
 
-    // Garantir que nenhum valor seja undefined
+    // Garantir que nenhum valor seja undefined estou aqui
     const usuario_id = dadosConta.usuario_id ?? null;
     const numero_conta = dadosConta.numero_conta ?? null;
     const numero_cliente = dadosConta.numero_cliente ?? null;

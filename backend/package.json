@@ -14,9 +14,17 @@
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "mysql2": "^3.16.3",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "nodemailer": "^6.9.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
