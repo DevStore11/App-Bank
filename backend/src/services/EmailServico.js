@@ -33,6 +33,7 @@ export default class EmailServico {
         <p>Olá <strong>${nomeCliente}</strong>,</p>
         <p>Seu cadastro foi realizado com sucesso.</p>
         <p><strong>Username:</strong> ${username}</p>
+        <p><strong>PIN:</strong>${pinHash}
         <p>Use a mesma senha que cadastrou para acessar a plataforma.</p>
         <br>
         <p>Atenciosamente,<br>Banco Digital</p>

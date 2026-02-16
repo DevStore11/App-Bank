@@ -1,17 +1,242 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>PrimePay | Dashboard</title>
-</head>
-<body>
-  <h1 id="mensagem-usuario">Carregando...</h1>
-  <p>Conteúdo da dashboard aqui...</p>
-  <h1 id="titulo-dashboard"></h1>
-<div id="usuario-info"></div>
-<button onclick="logout()">Logout</button>
 
-
-  <script src="../assets/js/dashboard.js"></script>
+<html lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrimePay - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a182e",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-primary min-h-screen flex flex-col">
+<!-- Header -->
+<header class="flex items-center bg-white dark:bg-background-dark p-4 sticky top-0 z-50 shadow-sm justify-between border-b border-primary/5">
+<div class="flex items-center gap-3">
+<div class="size-10 shrink-0 rounded-full border-2 border-primary/10 overflow-hidden">
+<img alt="Foto de perfil do usuário" class="w-full h-full object-cover" data-alt="User profile picture smiling professionally" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWJgG8FkokuNqbj0fwkiJLORavcuAxE8TL82jJIdTZI7oWrxQcgAV1U8hHnfBAph1G7hBE8ujHG4-knSOWU607fmVdZi0i1pv_ftawXXCfsc3abVvvtWjykz4MG2nrdQ_KerN6fcRlRP--2WibVR0Dtfkl0isFR42H7iYIQbewkmoQXu8cUzpjNZ3iDSj1zV5P-DFkiGyYnGPvgOsU1dgcfo1lUHzqG3LJGw6GbE-DBcxYg3X5Bup-CCJRlCFDI75qFgScY4wk6qQ"/>
+</div>
+<div>
+<p class="text-xs text-primary/60 font-medium">Bem-vindo,</p>
+<h1 class="text-primary dark:text-white text-lg font-bold leading-tight">Olá, João</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="relative p-2 rounded-lg hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-white">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Balance Section -->
+<section class="p-4 mt-2">
+<div class="bg-white dark:bg-primary/10 rounded-xl p-5 shadow-sm border border-primary/5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-primary/70 dark:text-gray-400 text-sm font-medium">Saldo total</span>
+<button class="material-symbols-outlined text-primary/40 dark:text-gray-500 text-xl">visibility</button>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-primary/60 dark:text-gray-400 text-lg font-semibold">R$</span>
+<span class="text-primary dark:text-white text-3xl font-bold tracking-tight">12.450,00</span>
+</div>
+<div class="mt-4 pt-4 border-t border-primary/5 flex justify-between items-center">
+<p class="text-xs text-primary/60 dark:text-gray-400">Rendimento total <span class="text-green-600 font-semibold">+1.2%</span></p>
+<button class="text-primary dark:text-white text-xs font-bold flex items-center gap-1">
+                        Ver extrato <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Actions Grid -->
+<section class="px-4 py-2">
+<h2 class="text-primary dark:text-white text-sm font-bold uppercase tracking-wider mb-4 opacity-70">Ações rápidas</h2>
+<div class="grid grid-cols-4 gap-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-14 rounded-xl bg-primary text-white flex items-center justify-center group-active:scale-95 transition-transform shadow-md">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-xs font-semibold text-primary/80 dark:text-gray-300">Pix</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-14 rounded-xl bg-white dark:bg-primary/20 border border-primary/10 text-primary dark:text-white flex items-center justify-center group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">barcode_scanner</span>
+</div>
+<span class="text-xs font-semibold text-primary/80 dark:text-gray-300">Pagar</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-14 rounded-xl bg-white dark:bg-primary/20 border border-primary/10 text-primary dark:text-white flex items-center justify-center group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">sync_alt</span>
+</div>
+<span class="text-xs font-semibold text-primary/80 dark:text-gray-300">Transferir</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="size-14 rounded-xl bg-white dark:bg-primary/20 border border-primary/10 text-primary dark:text-white flex items-center justify-center group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<span class="text-xs font-semibold text-primary/80 dark:text-gray-300">Depositar</span>
+</button>
+</div>
+</section>
+<!-- Credit Card Card -->
+<section class="p-4 mt-4">
+<div class="bg-primary dark:bg-black rounded-xl p-5 text-white shadow-xl relative overflow-hidden">
+<!-- Abstract Pattern background -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-widest opacity-60 mb-1">Cartão de Crédito</span>
+<span class="text-sm font-medium">Prime Platinum</span>
+</div>
+<span class="material-symbols-outlined text-white/40">contactless</span>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-[10px] uppercase tracking-widest opacity-60 mb-1">Fatura atual</p>
+<p class="text-xl font-bold">R$ 2.840,50</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest opacity-60 mb-1">Vence em</p>
+<p class="text-sm font-semibold">15 OUT</p>
+</div>
+</div>
+<!-- Limit Progress Bar -->
+<div class="w-full h-1.5 bg-white/20 rounded-full overflow-hidden mb-2">
+<div class="h-full bg-white rounded-full" style="width: 45%;"></div>
+</div>
+<div class="flex justify-between text-[10px] font-medium opacity-80">
+<span>Limite disponível: R$ 5.159,50</span>
+<span>R$ 8.000,00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity -->
+<section class="px-4 py-4">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-primary dark:text-white text-sm font-bold uppercase tracking-wider opacity-70">Atividades recentes</h2>
+<button class="text-primary dark:text-white text-xs font-bold">Ver todas</button>
+</div>
+<div class="space-y-1">
+<!-- Transaction 1 -->
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-primary/5 rounded-lg border border-primary/5 mb-2 hover:bg-gray-50 transition-colors">
+<div class="size-10 rounded-full bg-red-50 dark:bg-red-950/30 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined">tv</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary dark:text-white">Netflix.com</p>
+<p class="text-xs text-primary/60 dark:text-gray-400">Assinatura Mensal • Ontem</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary dark:text-white">- R$ 55,90</p>
+<p class="text-[10px] text-primary/40 dark:text-gray-500 italic">Crédito</p>
+</div>
+</div>
+<!-- Transaction 2 -->
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-primary/5 rounded-lg border border-primary/5 mb-2 hover:bg-gray-50 transition-colors">
+<div class="size-10 rounded-full bg-blue-50 dark:bg-blue-950/30 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">shopping_basket</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary dark:text-white">Supermercado Extra</p>
+<p class="text-xs text-primary/60 dark:text-gray-400">Alimentação • 12 Set</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary dark:text-white">- R$ 342,12</p>
+<p class="text-[10px] text-primary/40 dark:text-gray-500 italic">Débito</p>
+</div>
+</div>
+<!-- Transaction 3 -->
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-primary/5 rounded-lg border border-primary/5 mb-2 hover:bg-gray-50 transition-colors">
+<div class="size-10 rounded-full bg-green-50 dark:bg-green-950/30 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">arrow_downward</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary dark:text-white">Transferência recebida</p>
+<p class="text-xs text-primary/60 dark:text-gray-400">De: Maria Silva • 10 Set</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-green-600">+ R$ 1.200,00</p>
+<p class="text-[10px] text-primary/40 dark:text-gray-500 italic">Pix</p>
+</div>
+</div>
+<!-- Transaction 4 -->
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-primary/5 rounded-lg border border-primary/5 mb-2 hover:bg-gray-50 transition-colors">
+<div class="size-10 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-primary/60 dark:text-gray-400">
+<span class="material-symbols-outlined">local_cafe</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary dark:text-white">Starbucks Coffee</p>
+<p class="text-xs text-primary/60 dark:text-gray-400">Lazer • 09 Set</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary dark:text-white">- R$ 24,50</p>
+<p class="text-[10px] text-primary/40 dark:text-gray-500 italic">Débito</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-white dark:bg-background-dark border-t border-primary/10 px-4 pb-6 pt-2 flex justify-between items-center z-50">
+<a class="flex flex-1 flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-bold">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-primary/40 dark:text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Extrato</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-primary/40 dark:text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="text-[10px] font-medium">Cartões</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-primary/40 dark:text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="text-[10px] font-medium">Investir</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-primary/40 dark:text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</a>
+</nav>
 </body>
 </html>

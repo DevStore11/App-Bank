@@ -72,6 +72,7 @@ export default class UsuarioCadastroServico {
           numero_cliente: dadosConta.numero_cliente,
           numero_conta: dadosConta.numero_conta,
           iban: dadosConta.iban,
+          pinHash: dadosConta.pinHash, // ✅ inclui o PIN no retorno
           saldo: "0.00 MZN"
         }
       };
