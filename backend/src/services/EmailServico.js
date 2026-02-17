@@ -33,7 +33,6 @@ export default class EmailServico {
         <p>Olá <strong>${nomeCliente}</strong>,</p>
         <p>Seu cadastro foi realizado com sucesso.</p>
         <p><strong>Username:</strong> ${username}</p>
-        <p><strong>PIN:</strong>${pinHash}
         <p>Use a mesma senha que cadastrou para acessar a plataforma.</p>
         <br>
         <p>Atenciosamente,<br>Banco Digital</p>
@@ -57,7 +56,7 @@ export default class EmailServico {
    * @param {object} dadosConta
    */
   async enviarUsernameEDadosConta(emailDestinatario, username, nomeCliente, dadosConta) {
-    const { numero_cliente, numero_conta, iban, saldo } = dadosConta;
+    const { numero_cliente, numero_conta, iban,pin, saldo } = dadosConta;
 
     const mailOptions = {
       from: `"Banco Digital" <${process.env.EMAIL_USER}>`,
@@ -71,6 +70,7 @@ export default class EmailServico {
         <p><strong>Número do Cliente:</strong> ${numero_cliente}</p>
         <p><strong>Número da Conta:</strong> ${numero_conta}</p>
         <p><strong>IBAN:</strong> ${iban}</p>
+          <p><strong>PIN:</strong>${pin} </p>
         <p><strong>Saldo inicial:</strong> ${saldo}</p>
         <p>Use a mesma senha que cadastrou para acessar a plataforma.</p>
         <br>
