@@ -9,7 +9,7 @@ O backend foi divididos por pastas
 ->repositories;
 ->Service;
 
-O objectivo da criacao desse sistema bancario e entender como funcionam os grandes sistemas bancarios respentado suas regras de negocio, mantendo transparencia com os clientes.
+O objectivo da criacao desse sistema bancario e entender como funcionam os grandes sistemas bancarios respeintado suas regras de negocio, mantendo transparencia com os clientes.
 Para criacao fizemos das seguintes ferramentas:
 ->Node.js:Para backend no servidor;
 ->html,tailwindcss,js:para frontend;

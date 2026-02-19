@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="pt-br"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PrimePay | O banco digital feito para o seu futuro</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PrimePay | O banco digital feito para o seu futuro</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -31,198 +38,265 @@
             },
         }
     </script>
-<style>
+    <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-nav {
             backdrop-filter: blur(10px);
             background-color: rgba(246, 247, 248, 0.8);
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-primary font-display antialiased">
-<!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16 md:h-20">
-<div class="flex items-center gap-2">
-<div class="text-primary flex size-10 shrink-0 items-center justify-center bg-primary rounded-lg text-white">
-<span class="material-symbols-outlined">account_balance</span>
-</div>
-<span class="text-primary text-xl font-bold tracking-tight">PrimePay</span>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#">Vantagens</a>
-<a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#">Investimentos</a>
-<a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#">Segurança</a>
-</div>
-<button class="md:hidden p-2 text-primary hover:bg-primary/5 rounded-lg transition-colors">
-<span class="material-symbols-outlined">menu</span>
-</button><div class="flex items-center gap-4">
-<a class="text-sm font-bold text-primary px-2 sm:px-4 py-2 hover:bg-primary/5 rounded-lg transition-all flex items-center" href="/login">Login</a>
-<a class="bg-primary text-white text-sm font-bold px-4 sm:px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-sm whitespace-nowrap" href="/login">Cadastro</a>
-</div>
-</div>
-</div>
-</nav>
-<!-- Hero Section -->
-<main class="pt-24 md:pt-32">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col @[864px]:flex-row gap-12 py-10 @[864px]:py-20 items-center">
-<div class="flex flex-col gap-8 w-full @[864px]:w-1/2">
-<div class="flex flex-col gap-4">
-<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
-<span class="material-symbols-outlined text-sm">verified</span> Novo Banco Digital
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex items-center gap-2">
+                    <div
+                        class="text-primary flex size-10 shrink-0 items-center justify-center bg-primary rounded-lg text-white">
+                        <span class="material-symbols-outlined">account_balance</span>
+                    </div>
+                    <span class="text-primary text-xl font-bold tracking-tight">PrimePay</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#">Vantagens</a>
+                    <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#">Investimentos</a>
+                    <a class="text-sm font-medium hover:text-primary/70 transition-colors" href="#">Segurança</a>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <a class="text-sm font-bold text-primary px-2 sm:px-4 py-2 hover:bg-primary/5 rounded-lg transition-all flex items-center"
+                        href="/login">Login</a>
+                    <a class="bg-primary text-white text-sm font-bold px-4 sm:px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-sm whitespace-nowrap"
+                        href="pages/cadastro.html">Cadastro</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-white hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-primary/5">Vantagens</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-primary/5">Investimentos</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-primary/5">Segurança</a>
+                <a href="/login" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-primary/5">Login</a>
+                <a href="pages/cadastro.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-primary/5">Cadastro</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <main class="pt-24 md:pt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col @[864px]:flex-row gap-12 py-10 @[864px]:py-20 items-center">
+                <div class="flex flex-col gap-8 w-full @[864px]:w-1/2">
+                    <div class="flex flex-col gap-4">
+                        <span
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+                            <span class="material-symbols-outlined text-sm">verified</span> Novo Banco Digital
                         </span>
-<h1 class="text-primary text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.03em]">
+                        <h1
+                            class="text-primary text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.03em]">
                             O banco digital feito para o seu futuro
                         </h1>
-<p class="text-primary/70 text-lg sm:text-xl font-normal leading-relaxed max-w-[540px]">
-                            Gerencie seu dinheiro com taxa zero e facilidade total. Simplicidade para investir e segurança máxima para o seu dia a dia.
+                        <p class="text-primary/70 text-lg sm:text-xl font-normal leading-relaxed max-w-[540px]">
+                            Gerencie seu dinheiro com taxa zero e facilidade total. Simplicidade para investir e
+                            segurança máxima para o seu dia a dia.
                         </p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4">
-    <a href="/cadastro" class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 md:h-14 px-8 bg-primary text-white text-base font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg"> Abrir Conta Grátis</a>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="pages/cadastro.html"
+                            class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 md:h-14 px-8 bg-primary text-white text-base font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg">
+                            Abrir Conta Grátis</a>
 
-    <a href="/login" class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 md:h-14 px-8 bg-white border-2 border-primary/10 text-primary text-base font-bold transition-all hover:bg-primary/5 active:scale-95"> Acessar Conta</a>
-<button >
-                           
-                        </button>
-</div>
-<div class="flex items-center gap-6 pt-4 border-t border-primary/5">
-<div class="flex -space-x-2">
-<div class="size-8 rounded-full bg-primary/20 border-2 border-background-light"></div>
-<div class="size-8 rounded-full bg-primary/40 border-2 border-background-light"></div>
-<div class="size-8 rounded-full bg-primary/60 border-2 border-background-light"></div>
-</div>
-<p class="text-primary/60 text-sm font-medium">Mais de 500 mil clientes confiam</p>
-</div>
-</div>
-<div class="w-full @[864px]:w-1/2">
-<div class="relative w-full aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl bg-primary/5 group" data-alt="Close up of a premium black credit card held by a hand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlySD1ZG2rlkNuHs2Ez786LcErA3wKgdSP5hTDHzkJIg9Evlrf4GLTN0nFq4KUtVMHQDv8sin_JD2xmC9QfBQGOMwAbnI1HOqLS6GXrZaT8XLChdNS_svhrq8uzXk07UaGdUj-bvJVtFSlPJI-vk6CDA0d5ujhalmz5dcLSKlDp1m4nMVJS66FzJmghGzjgz_gvqPaqQj9MGqw6jV8-h7hD4up8Eg_lyjBiKDLZLuwcnaXR7LNtSkfYeSkNZsPBuneAhF03FpLDqk"); background-size: cover; background-position: center;'>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Features Grid -->
-<section class="bg-white py-20 @container">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col gap-4 mb-16 text-center items-center">
-<h2 class="text-primary text-3xl md:text-4xl font-bold tracking-tight">Tudo o que você precisa</h2>
-<p class="text-primary/60 text-lg max-w-2xl">Soluções financeiras completas para impulsionar sua vida financeira com exclusividade e rapidez.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Feature 1 -->
-<div class="flex flex-col gap-6 rounded-2xl border border-primary/5 bg-background-light p-8 transition-all hover:shadow-xl hover:-translate-y-1">
-<div class="text-primary bg-white size-14 rounded-xl flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-3xl">credit_card</span>
-</div>
-<div class="flex flex-col gap-3">
-<h3 class="text-primary text-xl font-bold">Cartão Platinum sem anuidade</h3>
-<p class="text-primary/70 text-base leading-relaxed">O prestígio do Platinum com zero taxas e cashback real em todas as compras nacionais e internacionais.</p>
-</div>
-</div>
-<!-- Feature 2 -->
-<div class="flex flex-col gap-6 rounded-2xl border border-primary/5 bg-background-light p-8 transition-all hover:shadow-xl hover:-translate-y-1">
-<div class="text-primary bg-white size-14 rounded-xl flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-3xl">trending_up</span>
-</div>
-<div class="flex flex-col gap-3">
-<h3 class="text-primary text-xl font-bold">Investimentos inteligentes</h3>
-<p class="text-primary/70 text-base leading-relaxed">Acesse fundos exclusivos e ferramentas de análise avançadas para fazer seu patrimônio render muito mais.</p>
-</div>
-</div>
-<!-- Feature 3 -->
-<div class="flex flex-col gap-6 rounded-2xl border border-primary/5 bg-background-light p-8 transition-all hover:shadow-xl hover:-translate-y-1">
-<div class="text-primary bg-white size-14 rounded-xl flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-3xl">support_agent</span>
-</div>
-<div class="flex flex-col gap-3">
-<h3 class="text-primary text-xl font-bold">Atendimento 24/7</h3>
-<p class="text-primary/70 text-base leading-relaxed">Suporte humanizado, ágil e eficiente sempre que você precisar, direto pelo chat exclusivo do nosso app.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-20 bg-background-light">
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<div class="bg-primary rounded-3xl p-10 md:p-20 shadow-2xl relative overflow-hidden">
-<!-- Decoration -->
-<div class="absolute top-0 right-0 -mr-20 -mt-20 size-64 bg-white/5 rounded-full blur-3xl"></div>
-<div class="absolute bottom-0 left-0 -ml-20 -mb-20 size-64 bg-white/5 rounded-full blur-3xl"></div>
-<div class="relative z-10 flex flex-col items-center gap-8">
-<h2 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-tight">
+                        <a href="/login"
+                            class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 md:h-14 px-8 bg-white border-2 border-primary/10 text-primary text-base font-bold transition-all hover:bg-primary/5 active:scale-95">
+                            Acessar Conta</a>
+                    </div>
+                    <div class="flex items-center gap-6 pt-4 border-t border-primary/5">
+                        <div class="flex -space-x-2">
+                            <div class="size-8 rounded-full bg-primary/20 border-2 border-background-light"></div>
+                            <div class="size-8 rounded-full bg-primary/40 border-2 border-background-light"></div>
+                            <div class="size-8 rounded-full bg-primary/60 border-2 border-background-light"></div>
+                        </div>
+                        <p class="text-primary/60 text-sm font-medium">Mais de 500 mil clientes confiam</p>
+                    </div>
+                </div>
+                <div class="w-full @[864px]:w-1/2">
+                    <div class="relative w-full aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl bg-primary/5 group"
+                        data-alt="Close up of a premium black credit card held by a hand"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlySD1ZG2rlkNuHs2Ez786LcErA3wKgdSP5hTDHzkJIg9Evlrf4GLTN0nFq4KUtVMHQDv8sin_JD2xmC9QfBQGOMwAbnI1HOqLS6GXrZaT8XLChdNS_svhrq8uzXk07UaGdUj-bvJVtFSlPJI-vk6CDA0d5ujhalmz5dcLSKlDp1m4nMVJS66FzJmghGzjgz_gvqPaqQj9MGqw6jV8-h7hD4up8Eg_lyjBiKDLZLuwcnaXR7LNtSkfYeSkNZsPBuneAhF03FpLDqk"); background-size: cover; background-position: center;'>
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features Grid -->
+        <section class="bg-white py-20 @container">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col gap-4 mb-16 text-center items-center">
+                    <h2 class="text-primary text-3xl md:text-4xl font-bold tracking-tight">Tudo o que você precisa</h2>
+                    <p class="text-primary/60 text-lg max-w-2xl">Soluções financeiras completas para impulsionar sua
+                        vida financeira com exclusividade e rapidez.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div
+                        class="flex flex-col gap-6 rounded-2xl border border-primary/5 bg-background-light p-8 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div
+                            class="text-primary bg-white size-14 rounded-xl flex items-center justify-center shadow-sm">
+                            <span class="material-symbols-outlined text-3xl">credit_card</span>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-primary text-xl font-bold">Cartão Platinum sem anuidade</h3>
+                            <p class="text-primary/70 text-base leading-relaxed">O prestígio do Platinum com zero taxas
+                                e cashback real em todas as compras nacionais e internacionais.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div
+                        class="flex flex-col gap-6 rounded-2xl border border-primary/5 bg-background-light p-8 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div
+                            class="text-primary bg-white size-14 rounded-xl flex items-center justify-center shadow-sm">
+                            <span class="material-symbols-outlined text-3xl">trending_up</span>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-primary text-xl font-bold">Investimentos inteligentes</h3>
+                            <p class="text-primary/70 text-base leading-relaxed">Acesse fundos exclusivos e ferramentas
+                                de análise avançadas para fazer seu patrimônio render muito mais.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div
+                        class="flex flex-col gap-6 rounded-2xl border border-primary/5 bg-background-light p-8 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div
+                            class="text-primary bg-white size-14 rounded-xl flex items-center justify-center shadow-sm">
+                            <span class="material-symbols-outlined text-3xl">support_agent</span>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <h3 class="text-primary text-xl font-bold">Atendimento 24/7</h3>
+                            <p class="text-primary/70 text-base leading-relaxed">Suporte humanizado, ágil e eficiente
+                                sempre que você precisar, direto pelo chat exclusivo do nosso app.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-20 bg-background-light">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="bg-primary rounded-3xl p-10 md:p-20 shadow-2xl relative overflow-hidden">
+                    <!-- Decoration -->
+                    <div class="absolute top-0 right-0 -mr-20 -mt-20 size-64 bg-white/5 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 size-64 bg-white/5 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 flex flex-col items-center gap-8">
+                        <h2 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-tight">
                             Pronto para transformar seu futuro financeiro?
                         </h2>
-<p class="text-white/80 text-lg md:text-xl font-normal max-w-2xl">
-                            Abra sua conta em menos de 5 minutos e experimente o novo padrão de banco digital. Sem filas, sem taxas, sem burocracia.
+                        <p class="text-white/80 text-lg md:text-xl font-normal max-w-2xl">
+                            Abra sua conta em menos de 5 minutos e experimente o novo padrão de banco digital. Sem
+                            filas, sem taxas, sem burocracia.
                         </p>
-<button class="flex min-w-[240px] cursor-pointer items-center justify-center rounded-lg h-14 px-10 bg-white text-primary text-lg font-bold transition-all hover:scale-[1.05] active:scale-95 shadow-xl">
+                        <button
+                            class="flex min-w-[240px] cursor-pointer items-center justify-center rounded-lg h-14 px-10 bg-white text-primary text-lg font-bold transition-all hover:scale-[1.05] active:scale-95 shadow-xl">
                             Abrir Minha Conta Grátis
                         </button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-primary pt-16 pb-8 text-white/60">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
-<div class="col-span-2 md:col-span-1 flex flex-col gap-6">
-<div class="flex items-center gap-2 text-white">
-<span class="material-symbols-outlined">account_balance</span>
-<span class="text-xl font-bold tracking-tight">PrimePay</span>
-</div>
-<p class="text-sm leading-relaxed">
-                        Redefinindo a maneira como você lida com dinheiro. Segurança, transparência e tecnologia a seu favor.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary pt-16 pb-8 text-white/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 md:col-span-1 flex flex-col gap-6">
+                    <div class="flex items-center gap-2 text-white">
+                        <span class="material-symbols-outlined">account_balance</span>
+                        <span class="text-xl font-bold tracking-tight">PrimePay</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Redefinindo a maneira como você lida com dinheiro. Segurança, transparência e tecnologia a seu
+                        favor.
                     </p>
-<div class="flex gap-4">
-<a class="hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">thumb_up</span></a>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Produto</h4>
-<a class="text-sm hover:text-white transition-colors" href="#">Conta Digital</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Cartão de Crédito</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Investimentos</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Seguros</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Ajuda</h4>
-<a class="text-sm hover:text-white transition-colors" href="#">Central de Ajuda</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Canais de Contato</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Ouvidoria</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Segurança</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="text-white font-bold">Legal</h4>
-<a class="text-sm hover:text-white transition-colors" href="#">Termos de Uso</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Privacidade</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Contratos</a>
-<a class="text-sm hover:text-white transition-colors" href="#">Tarifas</a>
-</div>
-</div>
-<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-<p>© 2023 PrimePay Instituição de Pagamento S.A. Todos os direitos reservados.</p>
-<div class="flex gap-6">
-<span>Av.emerson , 1000 - São Emerson</span>
-</div>
-</div>
-</div>
-</footer>
-</body></html>
+                    <div class="flex gap-4">
+                        <a class="hover:text-white transition-colors" href="#"><span
+                                class="material-symbols-outlined">public</span></a>
+                        <a class="hover:text-white transition-colors" href="#"><span
+                                class="material-symbols-outlined">share</span></a>
+                        <a class="hover:text-white transition-colors" href="#"><span
+                                class="material-symbols-outlined">thumb_up</span></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold">Produto</h4>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Conta Digital</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Cartão de Crédito</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Investimentos</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Seguros</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold">Ajuda</h4>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Central de Ajuda</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Canais de Contato</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Ouvidoria</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Segurança</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-bold">Legal</h4>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Termos de Uso</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Privacidade</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Contratos</a>
+                    <a class="text-sm hover:text-white transition-colors" href="#">Tarifas</a>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>© 2023 PrimePay Instituição de Pagamento S.A. Todos os direitos reservados.</p>
+                <div class="flex gap-6">
+                    <span>Av.emerson , 1000 - São Emerson</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('.material-symbols-outlined');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            mobileMenuButton.setAttribute('aria-expanded', !isHidden);
+            
+            if (isHidden) {
+                menuIcon.textContent = 'menu';
+            } else {
+                menuIcon.textContent = 'close';
+            }
+        });
+    });
+
+</script>
+
+</html>
